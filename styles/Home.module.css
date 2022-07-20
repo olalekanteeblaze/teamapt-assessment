@@ -1,14 +1,20 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 1rem;
+  background-image: url('/background.png');
+  width: 100%;
+  color: #ffffff;
+  z-index: 100;
+  overflow: hidden;
+  max-height: 100vh;
+  position: relative;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -69,48 +75,373 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  flex-direction: column;
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
+  padding: 24px 16px;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border-radius: 8px;
+  max-width: 350px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.39) -213.5%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset 0px -1px 11px rgba(255, 255, 255, 0.17), inset 0px 2px 0px rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  font-size: 12px;
+  animation: card_anim 1s ease-in;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.card__content {
+  font-weight: 200;
 }
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
+.card__content ol {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  padding: 16px;
+  line-height: 180%;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.card__header {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.header {
+  padding: 32px 0;
+}
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  align-items: center;
+}
+.calendar span {
+  display: block;
+}
+.calendar__icon {
+  background-color: #9B51E0;
+  border-radius: 8px;
+  margin-right: 16px;
+  outline: 8px solid rgba(255, 255, 255, 0.1);;
+}
+.current__day {
+  font-weight: bold;
+  font-size: 20px;
+}
+.day__left {
+  color: rgba(255, 255, 255, 0.6);
+}
+.hero__section__heading {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 200;
+  line-height: 120%;
+  margin: 0;
+  animation: text_anim 1s ease-in-out;
+  transform-origin: bottom;
+  font-family: 'Poppins-Light';
+}
+
+.hero__section__heading span {
+  font-weight: 800;
+  font-family: Poppins;
+}
+
+.hero__section__content {
+  text-align: center;
+  font-weight: 100;
+  margin: 16px 32px;
+  line-height: 140%;
+  font-size: 16px;
+  animation: text_anim 1s ease-in-out;
+}
+.hero__section__content span, .card__content li span {
+  font-weight: bold;
+}
+.card__content__footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card__content__footer p {
+  margin: 0 0 0 10px ;
+  line-height: 180%
+}
+
+.cta__btn {
+  background-color: #ECAB03;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  display: flex;
+  padding: 16px 24px 16px 32px;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  margin-top: 24px;
+  margin-bottom: 120px;
+  animation: btn_anim 1s ease-in;
+}
+
+.coin__pot {
+  position: absolute;
+  bottom: 0;
+}
+
+.coin__left {
+  position: absolute;
+  left: -70px;
+  bottom: 0;
+}
+.coin__right {
+  position: absolute;
+  right: -60px;
+  bottom: 0px;
+}
+.coin__pot img {
+  object-fit: contain;
+  width: calc(100vw - 1.5rem);
+  max-width: 450px;
+  z-index: 10;
+}
+.bottom__anim {
+  display: flex;
+  justify-content: center;
+  animation: coin_pot__anim 0.5s linear;
+}
+
+.center__ray {
+  display: flex;
+  justify-content: center;
+}
+
+.white__star__up {
+  position: absolute;
+  top: 120px;
+  right: 0px
+}
+.white__star__down {
+  position: absolute;
+  bottom: 180px;
+  left: 250px;
+  z-index: -1;
+}
+.golden__star__up {
+  position: absolute;
+  top: 320px;
+  right: 50px;
+  z-index: -1;
+}
+.golden__star__down {
+  position: absolute;
+  bottom: 30px;
+  left: 300px
+}
+.green__star {
+  position: absolute;
+  top: 100px;
+  left: 200px
+}
+.ray__box__container {
+  width: calc(100vw - 1.5rem);
+  position: absolute;
+  bottom: 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+.ray__box {
+  position: relative;
+  animation: ray_anim 10s linear infinite;
+}
+.ray {  
+  position: absolute;
+  z-index: -1;
+  transform-origin: center;
+  width: 0;
+  height: min-content;
+  bottom: -300px;
+  left: 30%;
+  transform-origin: -30px 30%;
+}
+
+.ray2 {
+   transform: rotate(10deg);
+   left: 250px;
+   transform-origin: center;
+}
+
+.ray3 {
+   -webkit-transform: rotate(-20deg);
+   transform: rotate(-20deg);
+    left: -160px;
+}
+
+.ray4 {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    left: -160px;
+}
+
+.ray5 {
+   display: none;
+}
+.ray6 {
+    display: none;
+}
+
+@-webkit-keyframes ray_anim { 
+		0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+    50% { -webkit-transform: rotate(10deg); transform: rotate(10deg);}
+}
+
+@-webkit-keyframes coin_anim { 
+  0% { -webkit-transform: translateY(0); transform: translateY(0deg);}    
+  50% { -webkit-transform: translateY(50px); transform: translateY(50px);}
+}
+
+@-webkit-keyframes coin_pot__anim { 
+  0% { -webkit-transform: translateY(400px); transform: translateY(400px);}    
+  100% { -webkit-transform: translateY(200px); transform: translateY(200px);}
+}
+
+@-webkit-keyframes btn_anim { 
+  0% { -webkit-transform: translateY(100%); transform: translateY(100%);}    
+  100% { -webkit-transform: translateY(0); transform: translateY(0);}
+}
+
+@-webkit-keyframes card_anim { 
+  0% { -webkit-transform: translateY(10%); transform: translateY(10%);}    
+  100% { -webkit-transform: translateY(0); transform: translateY(0);}
+}
+
+@-webkit-keyframes text_anim { 
+  0% { -webkit-transform: scaleY(0%); transform: scaleY(0%);}    
+  100% { -webkit-transform: scaleY(100%); transform: scaleY(100%);}
+}
+
+@keyframes ray_anim { 
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+  50% { -webkit-transform: rotate(10deg); transform: rotate(10deg);}
+}
+
+@keyframes coin_anim { 
+  0% { -webkit-transform: translateY(0); transform: translateY(0deg);}    
+  50% { -webkit-transform: translateY(50px); transform: translateY(50px);}
+}
+
+@keyframes coin_pot__anim { 
+  0% { -webkit-transform: translateY(400px); transform: translateY(400px);}    
+  100% { -webkit-transform: translateY(200px); transform: translateY(200px);}
+}
+
+@keyframes btn_anim { 
+  0% { -webkit-transform: translateY(100%); transform: translateY(100%);}    
+  100% { -webkit-transform: translateY(0); transform: translateY(0);}
+}
+
+@keyframes card_anim { 
+  0% { -webkit-transform: translateY(10%); transform: translateY(10%);}    
+  100% { -webkit-transform: translateY(0); transform: translateY(0);}
+}
+
+@keyframes text_anim { 
+  0% { -webkit-transform: scaleY(0%); transform: scaleY(0%);}    
+  100% { -webkit-transform: scaleY(100%); transform: scaleY(100%);}
+}
+
+@media screen and (min-width: 768px) {
+  .ray__box {
+    right: 300px;
+  }
+  .ray__box__container {
+    width: calc(100vw - 1.5rem);
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+    z-index: -1;
+  }
+  .ray3 {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+     left: -50px;
+  }
+  .ray1 {
+    left: 300px;
+  }
+  .ray4 {
+    transform: rotate(-25deg);
+    left:50;
+  }
+  .ray5 {
+    left: 180px;
+    display: block;
+  }
+  .ray2 {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    width: fit-content;
+    left: 500px;
+  }
+  .hero__section__heading span {
+    display: block;
+  }
+  .center__ray {
+    display: block;
+  }
+  .coin__left {
+    position: absolute;
+    left: 400px;
+    bottom: 120px;
+    animation: coin_anim 3s linear infinite;
+  }
+  .coin__right {
+    position: absolute;
+    right: 400px;
+    bottom: 80px;
+    animation: coin_anim 3s linear infinite;
+  }
+  .card {
+    max-width: 400px;
+  }
+
+  .header {
+    padding: 32px 32px;
+  }
+
+  .white__star__up {
+    position: absolute;
+    top: 150px;
+    right: 50px
+  }
+  .white__star__down {
+    position: absolute;
+    bottom: 300px;
+    left: 300px
+  }
+  .golden__star__up {
+    position: absolute;
+    top: 230px;
+    right: 540px
+  }
+  .golden__star__down {
+    position: absolute;
+    bottom: 30px;
+    left: 300px
+  }
+  .green__star {
+    position: absolute;
+    top: 100px;
+    left: 200px
+  }
+  .hero__section__heading {
+    font-size: 48px;
   }
 }

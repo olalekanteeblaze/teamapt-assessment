@@ -2,8 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +11,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("/Poppins-Bold.otf") format("opentype");
+  /* font-weight: 300; */
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url("/Poppins-Light.otf") format("opentype");
+  /* font-weight: 300; */
 }

@@ -12,48 +12,111 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Image src="/logo.svg" width={50} height={50} alt="Logo" />
         </div>
+        <div className={styles.calendar}>
+          <div className={styles.calendar__icon}>
+            <img src="/calendar.svg" width={32} height={32} alt="calendar icon"/>
+          </div>
+          <div>
+            <span className={styles.current__day}>Day 1</span>
+            <span className={styles.day__left}>of 5</span>
+          </div>
+        </div>
+      </header>
+      <main className={styles.main}>
+        <div className={styles.white__star__up}>
+          <img src="/white-star.svg" alt="white star down"/>
+        </div>
+        <div className={styles.white__star__down}>
+          <img src="/white-star.svg" alt="white star up"/>
+        </div>
+        <div className={styles.golden__star__up}>
+          <img src="/golden-star.svg" alt="golden star up"/>
+        </div>
+        <div className={styles.golden__star__down}>
+          <img src="/golden-star.svg" alt="golden star down"/>
+        </div>
+        <div className={styles.green__star}>
+          <img src="/green-star.svg" alt="green star"/>
+        </div>
+        <p className={styles.hero__section__heading}>Unlock to <span>Power your dreams!</span></p>
+        <p className={styles.hero__section__content}>Stand a chance to win <span>N3,000,000</span> everyday for the next 5 days</p>
+        <div className={styles.grid}>
+          <div className={styles.card}>
+            <h6 className={styles.card__header}>🚀 How To Play</h6>
+            <div className={styles.card__content}>
+              <ol>
+                <li>Guess the right combination of numbers</li>
+                <li>Win <span>N3,000,000</span> instantly</li>
+              </ol>
+              <p>Sounds unbelievable? Well, guess right & see for yourself!</p>
+              <div className={styles.card__content__footer}>
+                <span>💡</span>
+                <p>Think well before you guess.
+                  You have only 2 attempts per day and even after you wi, 
+                  you can come back the next day to try for another jackpot!
+                </p>
+              </div>
+            </div>
+          </div>
+          <button className={styles.cta__btn}>Play The Game 
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M0.829505 0.454505C1.26884 0.015165 1.98116 0.015165 2.4205 0.454505L9.1705 7.2045C9.60983 7.64384 9.60983 8.35616 9.1705 8.7955L2.4205 15.5455C1.98116 15.9848 1.26884 15.9848 0.829505 15.5455C0.390165 15.1062 0.390165 14.3938 0.829505 13.9545L6.78401 8L0.829505 2.0455C0.390165 1.60616 0.390165 0.893845 0.829505 0.454505Z" fill="white"/>
+            </svg>
+          </button>
+        </div>
+        <div className={styles.bottom__anim}>
+        <div  className={styles.coin__pot}>
+          <img src="/coin-pot.svg" alt="coin pot"/>
+        </div>
+        <div className={styles.center__ray}>
+          <div className={styles.coin__left}>
+            <img src="/coin-left.svg" alt="coin on the left side"/>
+          </div>
+          <div className={styles.coin__right}>
+            <img src="/coin-right.svg" alt="coin on the right side"/>
+          </div>
+        <div className={styles.ray__box__container}>
+          <div className={styles.ray__box}>
+              <div className={`${styles.ray} ${styles.ray1}`}>
+                <img src="/golden-ray.svg" alt="first golden ray"/>
+              </div>
+              <div className={`${styles.ray} ${styles.ray2}`}>
+                <img src="/golden-ray.svg" alt="second golden ray"/>
+              </div>
+              <div className={`${styles.ray} ${styles.ray3}`}>
+                <img src="/golden-ray.svg" alt="third golden ray"/>
+              </div>
+              <div className={`${styles.ray} ${styles.ray4}`}>
+                <img src="/golden-ray.svg" alt="fourth golden ray"/>
+              </div>
+              <div className={`${styles.ray} ${styles.ray5}`}>
+                <img src="/golden-ray.svg" alt="fifth golden ray"/>
+              </div>
+              {/* <div className={`${styles.ray} ${styles.ray6}`}></div> */}
+              {/* <div className={`${styles.ray} ${styles.ray3}`}></div>
+              {/* <div className={`${styles.ray} ${styles.ray7}`}>
+                <img src="/golden-ray.svg" />
+              </div>
+              <div className={`${styles.ray} ${styles.ray8}`}>
+                <img src="/golden-ray.svg" />
+              </div>
+              <div className={`${styles.ray} ${styles.ray9}`}>
+                <img src="/golden-ray.svg" />
+              </div>
+              <div className={`${styles.ray} ${styles.ray10}`}>
+                <img src="/golden-ray.svg" />
+              </div>  */}
+          </div>
+      </div>
+        </div>
+      </div>
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -64,7 +127,7 @@ const Home: NextPage = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
   )
 }
